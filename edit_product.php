@@ -9,7 +9,7 @@ echo "<script>window.open('login.php','_self')</script>";
 else {
 
 ?>
-jhvjhvjhv
+
 <?php
 
 if(isset($_GET['edit_product'])){
