@@ -31,7 +31,7 @@
 
 <i class="fa fa-user" ></i>
 
-Name of user<b class="caret" ></b>
+<?php echo $admin_name; ?><b class="caret" ></b>
 
 
 </a><!-- dropdown-toggle Ends -->
