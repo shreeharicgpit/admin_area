@@ -1,20 +1,3 @@
-<?php
-
-
-
-if(!isset($_SESSION['admin_email'])){
-
-echo "<script>window.open('login.php','_self')</script>";
-
-}
-
-else {
-
-
-
-
-?>
-
 <div class="row"><!-- 1 row Starts -->
 
 <div class="col-lg-12"><!-- col-lg-12 Starts -->
@@ -54,7 +37,7 @@ else {
 
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-<div class="huge"> <?php echo $count_products; ?> </div>
+<div class="huge"> 10</div>
 
 <div>Products</div>
 
@@ -99,7 +82,7 @@ else {
 
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-<div class="huge"> <?php echo $count_customers; ?> </div>
+<div class="huge"> 20 </div>
 
 <div>Customers</div>
 
@@ -144,7 +127,7 @@ else {
 
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-<div class="huge"> <?php echo $count_p_categories; ?> </div>
+<div class="huge"> 30</div>
 
 <div>Products Categories</div>
 
@@ -189,7 +172,7 @@ else {
 
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 
-<div class="huge"> <?php echo $count_pending_orders; ?> </div>
+<div class="huge">40 </div>
 
 <div>Orders</div>
 
@@ -260,73 +243,27 @@ else {
 
 <tbody><!-- tbody Starts -->
 
-<?php
 
-$i = 0;
-
-$get_order = "select * from pending_orders order by 1 DESC LIMIT 0,5";
-$run_order = mysqli_query($con,$get_order);
-
-while($row_order=mysqli_fetch_array($run_order)){
-
-
-$order_id = $row_order['order_id'];
-
-$c_id = $row_order['customer_id'];
-
-$invoice_no = $row_order['invoice_no'];
-
-$product_id = $row_order['product_id'];
-
-$qty = $row_order['qty'];
-
-$size = $row_order['size'];
-
-$order_status = $row_order['order_status'];
-
-
-$i++;
-
-?>
 
 <tr>
 
-<td><?php echo $i; ?></td>
+<td>1</td>
 
 <td>
-<?php
-
-$get_customer = "select * from customers where customer_id='$c_id'";
-$run_customer = mysqli_query($con,$get_customer);
-$row_customer = mysqli_fetch_array($run_customer);
-$customer_email = $row_customer['customer_email'];
-echo $customer_email;
-?>
+manishvvasaniya@gmail.com
 </td>
 
-<td><?php echo $invoice_no; ?></td>
-<td><?php echo $product_id; ?></td>
-<td><?php echo $qty; ?></td>
-<td><?php echo $size; ?></td>
+<td>200</td>
+<td>1</td>
+<td>2</td>
+<td>100</td>
 <td>
-<?php
-if($order_status=='pending'){
-
-echo $order_status='pending';
-
-}
-else {
-
-echo $order_status='Complete';
-
-}
-
-?>
+complate
 </td>
 
 </tr>
 
-<?php } ?>
+
 
 </tbody><!-- tbody Ends -->
 
@@ -360,13 +297,13 @@ View All Orders <i class="fa fa-arrow-circle-right" ></i>
 
 <div class="thumb-info mb-md"><!-- thumb-info mb-md Starts -->
 
-<img src="admin_images/<?php echo $admin_image; ?>" class="rounded img-responsive">
+<img src="admin_images" class="rounded img-responsive" alt="putimage">
 
 <div class="thumb-info-title"><!-- thumb-info-title Starts -->
 
-<span class="thumb-info-inner"> <?php echo $admin_name; ?> </span>
+<span class="thumb-info-inner"> Manish </span>
 
-<span class="thumb-info-type"> <?php echo $admin_job; ?> </span>
+<span class="thumb-info-type"> ntg </span>
 
 </div><!-- thumb-info-title Ends -->
 
@@ -376,9 +313,9 @@ View All Orders <i class="fa fa-arrow-circle-right" ></i>
 
 <div class="widget-content-expanded"><!-- widget-content-expanded Starts -->
 
-<i class="fa fa-user"></i> <span>Email: </span> <?php echo $admin_email; ?>  <br>
-<i class="fa fa-user"></i> <span>Country: </span> <?php echo $admin_country; ?>   <br>
-<i class="fa fa-user"></i> <span>Contact: </span> <?php echo $admin_contact; ?>   <br>
+<i class="fa fa-user"></i> <span>Email: </span>manishvvasaniya  <br>
+<i class="fa fa-user"></i> <span>Country: </span> india <br>
+<i class="fa fa-user"></i> <span>Contact: </span> 769948757  <br>
 
 </div><!-- widget-content-expanded Ends -->
 
@@ -387,7 +324,7 @@ View All Orders <i class="fa fa-arrow-circle-right" ></i>
 <h5 class="text-muted">About</h5>
 
 <p>
-<?php echo $admin_about; ?>
+kai nay
 </p>
 
 </div><!-- mb-md Ends -->
@@ -399,5 +336,3 @@ View All Orders <i class="fa fa-arrow-circle-right" ></i>
 </div><!-- col-md-4 Ends -->
 
 </div><!-- 3 row Ends -->
-
-<?php } ?>

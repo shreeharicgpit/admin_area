@@ -1,16 +1,3 @@
-<?php
-
-
-
-if(!isset($_SESSION['admin_email'])){
-
-echo "<script>window.open('login.php','_self')</script>";
-
-}
-
-else {
-
-?>
 
 <div class="row" ><!-- 1 row Starts -->
 
@@ -78,47 +65,23 @@ else {
 
 <tbody><!-- tbody Starts -->
 
-<?php
 
-$get_admin = "select * from admins";
-
-$run_admin = mysqli_query($con,$get_admin);
-
-while($row_admin = mysqli_fetch_array($run_admin)){
-
-$admin_id = $row_admin['admin_id'];
-
-$admin_name = $row_admin['admin_name'];
-
-$admin_email = $row_admin['admin_email'];
-
-$admin_image = $row_admin['admin_image'];
-
-$admin_country = $row_admin['admin_country'];
-
-$admin_job = $row_admin['admin_job'];
-
-
-
-
-
-?>
 
 <tr>
 
-<td><?php echo $admin_name; ?></td>
+<td>manish</td>
 
-<td><?php echo $admin_email; ?></td>
+<td>gmail</td>
 
-<td><img src="admin_images/<?php echo $admin_image; ?>" width="60" height="60" ></td>
+<td><img src="admin_images" alt="image" width="60" height="60" ></td>
 
-<td><?php echo $admin_country; ?></td>
+<td>contry</td>
 
-<td><?php echo $admin_job; ?></td>
+<td>job</td>
 
 <td>
 
-<a href="index.php?user_delete=<?php echo $admin_id; ?>" >
+<a href="index.php" >
 
 <i class="fa fa-trash-o" ></i> Delete
 
@@ -130,7 +93,7 @@ $admin_job = $row_admin['admin_job'];
 </tr>
 
 
-<?php } ?>
+
 
 </tbody><!-- tbody Ends -->
 
@@ -152,9 +115,3 @@ $admin_job = $row_admin['admin_job'];
 
 
 </div><!-- 2 row Ends -->
-
-
-
-
-
-<?php }  ?>

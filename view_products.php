@@ -1,16 +1,3 @@
-<?php
-
-
-
-if(!isset($_SESSION['admin_email'])){
-
-echo "<script>window.open('login.php','_self')</script>";
-
-}
-
-else {
-
-?>
 
 
 <div class="row"><!--  1 row Starts -->
@@ -75,55 +62,25 @@ else {
 
 <tbody>
 
-<?php
 
-$i = 0;
-
-$get_pro = "select * from products";
-
-$run_pro = mysqli_query($con,$get_pro);
-
-while($row_pro=mysqli_fetch_array($run_pro)){
-
-$pro_id = $row_pro['product_id'];
-
-$pro_title = $row_pro['product_title'];
-
-$pro_image = $row_pro['product_img1'];
-
-$pro_price = $row_pro['product_price'];
-
-$pro_keywords = $row_pro['product_keywords'];
-
-$pro_date = $row_pro['date'];
-
-$i++;
-
-?>
 
 <tr>
 
-<td><?php echo $i; ?></td>
+<td>11</td>
 
-<td><?php echo $pro_title; ?></td>
+<td>title</td>
 
-<td><img src="product_images/<?php echo $pro_image; ?>" width="60" height="60"></td>
+<td><img src="product_images/" alt="sars" width="60" height="60"></td>
 
-<td>$ <?php echo $pro_price; ?></td>
+<td>$ price</td>
 
 <td>
-<?php
-
-$get_sold = "select * from pending_orders where product_id='$pro_id'";
-$run_sold = mysqli_query($con,$get_sold);
-$count = mysqli_num_rows($run_sold);
-echo $count;
-?>
+sold
 </td>
 
-<td> <?php echo $pro_keywords; ?> </td>
+<td> word</td>
 
-<td><?php echo $pro_date; ?></td>
+<td>date</td>
 
 <td>
 
@@ -137,7 +94,7 @@ echo $count;
 
 <td>
 
-<a href="index.php?edit_product=<?php echo $pro_id; ?>">
+<a href="index.php?edit_product">
 
 <i class="fa fa-pencil"> </i> Edit
 
@@ -147,7 +104,7 @@ echo $count;
 
 </tr>
 
-<?php } ?>
+
 
 
 </tbody>
@@ -168,4 +125,3 @@ echo $count;
 
 
 
-<?php } ?>
